@@ -6,7 +6,6 @@ A personal prompt management app for developers using AI coding assistants (GitH
 
 ## Live Demo
 
-Start the dev server:
 ```bash
 npm install
 npm run dev
@@ -44,40 +43,26 @@ src/
 SPEC.md                     # Feature spec (written first — spec-driven development)
 ```
 
-## How AI Was Used
+## Getting Started
 
-This project was built using **spec-driven development** with GitHub Copilot:
+```bash
+npm install
+npm run dev       # dev server at http://localhost:5173
+npm run build     # production build → dist/
+```
 
-1. **SPEC.md written first** — defined the data model, features, and success criteria before any code
-2. **Copilot completions** — used inline completions for hooks, event handlers, and CSS variables
-3. **Copilot Chat** — used to generate TypeScript types, localStorage patterns, and the seed data
-4. **Context docs** — kept  open as context while generating components
+## Usage
 
-## Presentation Notes
+1. **Add a prompt** — click **+ New Prompt**, fill in the title, body, category, tags, and an optional note
+2. **Copy a prompt** — click **📋 Copy** on any card to copy the prompt text to your clipboard
+3. **Rate prompts** — click the stars on any card to rate it inline (1–5)
+4. **Find prompts** — use the search bar, category chips, or sort dropdown to narrow results
+5. **Duplicate** — click ⎘ to create a copy of any prompt for quick variations
+6. **Edit / Delete** — use ✏️ and 🗑️ on each card
+7. **Backup** — click **⬇ Export** to download your entire library as JSON
+8. **Restore** — click **⬆ Import** to merge a previously exported JSON file
 
-### 1. Project Overview
-A single-page React/TypeScript app that acts as a personal library for AI prompts.
-Developers collect effective prompts but lose them — this app solves that.
-
-### 2. How Did You Leverage AI?
-- Wrote SPEC.md first (spec-driven dev), then used Copilot to implement each feature against the spec
-- Used Copilot Chat with the spec as context to generate type-safe hooks
-- Used inline completions for repetitive UI patterns (form fields, card actions)
-
-### 3. Key Learnings
-- Starting with a written spec dramatically improved the quality of Copilot suggestions
-- Providing context (open files) matters more than prompt length
-- TypeScript + Copilot is a great combo — it auto-completes to the correct shape
-
-### 4. Gotchas
--  in newer Vite/TS projects requires  — Copilot did not always generate this
-- localStorage can hold stale data during development; always test with a fresh tab
-- Heredoc in terminal can get garbled with JSX — use Python file writes instead
-
-### 5. What I Would Do Differently
-- Use a custom Copilot agent ( + custom instructions) from the start
-- Add a  with architecture decisions for better AI suggestions on larger files
-- Deploy to GitHub Pages so classmates can use it live during the demo
+All data is stored in your browser's `localStorage` — no account or server required.
 
 ## Tech Stack
 
